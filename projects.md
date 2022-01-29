@@ -53,6 +53,19 @@ layout = Layout(; title="Basic Contour Plot")
 plt    = plot(data, layout)
 ```
 
+```julia:./code/ex1
+a = 10
+@show a
+```
+\output{./code/ex1}
+
+```julia:./code/ex2
+using DataFrames
+df = DataFrame(A=1:4, B=["M", "F", "F", "M"])
+@show df
+```
+\output{./code/ex2}
+
 <!-- ```julia:ex2
 using PlotlyJS
 p=plot(

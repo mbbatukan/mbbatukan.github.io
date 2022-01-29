@@ -5,7 +5,9 @@
 :root {
   /* --block-background: hsl(0, 0%, 94%); */
   --block-background: rgba(100, 100, 100, 0.2);
-  --output-background: hsl(0, 0%, 98%);
+  /* --output-background: hsl(0, 0%, 98%); */
+  --output-background: rgba(100, 100, 100, 0.2);
+
   --small: 14px;
   --normal: 19px;
   --text-color: hsv(0, 0%, 20%);
