@@ -29,14 +29,26 @@
 a = 10
 @show a
 ```
-\output{./code/show_a}
+```plaintext
+a = 10
+```
 
 ```julia
 using DataFrames
 df = DataFrame(A=1:4, B=["M", "F", "F", "M"])
 @show df
 ```
-\output{./code/df_result}
+
+```plaintext
+4×2 DataFrame
+ Row │ A      B
+     │ Int64  String
+─────┼───────────────
+   1 │     1  M
+   2 │     2  F
+   3 │     3  F
+   4 │     4  M
+```
 
 <!-- 
 ~~~
