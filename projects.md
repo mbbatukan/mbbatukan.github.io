@@ -5,7 +5,7 @@
 @def rss_pubdate = Date(2022, 1, 22)
 @def tags = ["projects", "code", "julia", "python", "machine_learning", "artificial_intelligence"]
 
-# Projects (Website is under construction!)
+# Projects
 
 \tableofcontents
 
@@ -13,16 +13,11 @@
 
 ## Ongoing
 
-### Bike Share Toronto
-
 \textinput{project_files/bike_share_toronto/main}
 
+\textinput{project_files/data_wrangling_with_julia/main}
 
 ## Completed
-
-### Data Wrangling with Julia
-
-\textinput{project_files/data_wrangling_with_julia/main}
 
 
 <!-- 
