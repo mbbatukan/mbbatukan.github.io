@@ -420,22 +420,28 @@ h6 {
   color: #fff;
   /* color: rgba(25, 25, 25, 1.0); */
 }
-.sidebar a-icon {
-  font-weight: normal;
-  color: #fff;
-  /* color: rgba(25, 25, 25, 1.0); */
-}
 
 .sidebar-item {
   padding: 1rem;
 }
 
-/* Three image containers (use 25% for four, and 50% for two, etc) */
+/* Three image containers */
 .side-item-column {
   float: left;
   width: 33.33%;
   padding: 0px;
   text-align: center;
+}
+
+/* Clear floats after image containers */
+.side-item-row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.sidebar-item p:last-child {
+  margin-bottom: 0;
 }
 
 .fa-facebook:hover, 
@@ -448,17 +454,6 @@ h6 {
 .fa-researchgate:hover, 
 .fa-orcid:hover {
   color: rgb(0, 0, 0);
-}
-
-/* Clear floats after image containers */
-.side-item-row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.sidebar-item p:last-child {
-  margin-bottom: 0;
 }
 
 /* Sidebar nav */
