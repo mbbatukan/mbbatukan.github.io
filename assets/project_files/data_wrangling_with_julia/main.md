@@ -4,7 +4,7 @@
 
 Data wrangling is a very important step in machine learning, and raw (scraped/downloaded from the internet) data should be cleaned out before training the models. Pandas is incredibly powerful and well-developed module in Python to analyze and manipulate the data, so I have gained some basic experience in the last few years. However, Julia, high-level programming language, has been increasingly getting popular in data science. While I try to learn syntax of Julia to add to my skill set, I prepared this post to show similarities in between Julia/DataFrames and Python/Pandas. I hope this will encourage people to see how easy to code in Julia.
 
-Recently, there was an online event to learn basics of machine learning (Luckily, I attended). In the first part, data wrangling explained well in detail using Python/Pandas. Those who are interested in seeing the original repository by Shadi Khalifa and accessing to the source files can refer to [the repository](https://github.com/skhalifa/CAC_S20).
+Recently, there was an online event to learn basics of machine learning (Luckily, I attended). In the first part, data wrangling was explained well in detail using Python/Pandas. Those who are interested in seeing the original repository by Shadi Khalifa and accessing to the source files can refer to [the repository](https://github.com/skhalifa/CAC_S20).
 
 Basically, I repeated what it was done in Python/Julia to gain confidence in Julia/DataFrames. This first block of code is the Python code and following codes are Julia code and output from Julia REPL, respectively. I didn't explicitly show Python output, but it can be found in [Jupyter Notebook](https://github.com/skhalifa/CAC_S20/blob/master/DataPrepHandsOn.ipynb).
 
@@ -64,7 +64,7 @@ size(df_airbnb) = (7072, 96)</code></pre>
 
 Also, `df_airbnb.info()` method and `describe(df_airbnb)` function can be used to get detailed information about dataset in Python/Pandas and Julia/DataFrames, respectively.
 
-There are 96 columns as you can see from the output. Since, not all of these columns is necessary to train model. We have to get rid of some of the columns.
+There are 96 columns and 7072 rows as you can see from the output. Since not all of these columns is necessary to train model, we select some of the columns from the main dataframe.
 
 ```julia
 # The same array in Python and Julia
