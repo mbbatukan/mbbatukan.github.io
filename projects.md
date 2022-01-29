@@ -1,6 +1,5 @@
 @def title = "Projects"
 @def hascode = true
-<!-- @def hasplotly = true -->
 @def rss = ""
 @def rss_title = "Projects"
 @def rss_pubdate = Date(2022, 1, 22)
@@ -26,45 +25,26 @@
 
 ### Data Wrangling with Julia
 
-
-<!-- ~~~
-<div id="tester" style="width:600px;height:350px;"></div>
-
-<script>
-    TESTER = document.getElementById('tester');
-    Plotly.newPlot( TESTER, [{
-    x: [1, 2, 3, 4, 5],
-    y: [1, 2, 4, 8, 16] }], {
-    margin: { t: 0 } } );
-</script>
-~~~ -->
-
-
-```
-using PlotlyJS
-z =  [10     10.625  12.5  15.625  20
-     5.625  6.25    8.125 11.25   15.625
-     2.5    3.125   5.    8.125   12.5
-     0.625  1.25    3.125 6.25    10.625
-     0      0.625   2.5   5.625   10]
-
-data   = contour(; z=z)
-layout = Layout(; title="Basic Contour Plot")
-plt    = plot(data, layout)
-```
-
-```julia:./code/ex1
+```julia
 a = 10
 @show a
 ```
-\output{./code/ex1}
+\output{./code/show_a}
 
-```julia:./code/ex2
+```julia
 using DataFrames
 df = DataFrame(A=1:4, B=["M", "F", "F", "M"])
 @show df
 ```
-\output{./code/ex2}
+\output{./code/df_result}
+
+<!-- 
+~~~
+<pre><code class="language-julia">dot(a, a) = 14</code></pre>
+~~~ -->
+<!-- \output{./code/ex2} -->
+<!-- \input{julia}{scripts/script1.jl} -->
+
 
 <!-- ```julia:ex2
 using PlotlyJS
