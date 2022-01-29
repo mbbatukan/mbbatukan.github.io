@@ -94,7 +94,7 @@ import Pandas as pd
 df_airbnb &#61; pd.read_csv&#40;&quot;airbnb.csv&quot;&#41;</code></pre> <pre><code class=language-julia ># Julia
 using CSV, DataFrames
 
-df_airbnb &#61; DataFrame&#40;CSV.File&#40;&quot;airbnb.csv&quot;&#41;&#41;</code></pre> <p>The first 5 rows of the dataframe can be seen with following commands:</p> <ul> <li><p>Python: <code>df_airbnb.head&#40;5&#41;</code></p> <li><p>Julia: <code>first&#40;df_airbnb, 5&#41;</code></p> </ul> <p>If you are using <a href="https://code.visualstudio.com">vscode</a> and <a href="https://code.visualstudio.com/docs/languages/julia">Julia extension</a> is installed. Dataframe can be visualized by <code>vscodedisplay&#40;df_airbnb&#41;</code>.</p> <p>Let&#39;s see how many rows and columns we have in the dataset.</p> <pre><code class=language-python ># Python
+df_airbnb &#61; DataFrame&#40;CSV.File&#40;&quot;airbnb.csv&quot;&#41;&#41;</code></pre> <p>The first/last 5 rows of the dataframe can be printed with following commands:</p> <ul> <li><p>Python: <code>df_airbnb.head&#40;5&#41;</code> and <code>df_airbnb.tail&#40;5&#41;</code></p> <li><p>Julia: <code>first&#40;df_airbnb, 5&#41;</code> and <code>last&#40;df_airbnb, 5&#41;</code></p> </ul> <p>If you are using <a href="https://code.visualstudio.com">vscode</a> and <a href="https://code.visualstudio.com/docs/languages/julia">Julia extension</a> is installed. Dataframe can be visualized by <code>vscodedisplay&#40;df_airbnb&#41;</code>.</p> <p>Let&#39;s see how many rows and columns we have in the dataset.</p> <pre><code class=language-python ># Python
 df_airbnb.shape</code></pre> <pre><code class=language-julia ># Julia
 @show size&#40;df_airbnb&#41;</code></pre> <pre><code class="plaintext code-output"># Julia REPL output
 size(df_airbnb) = (7072, 96)</code></pre> <p>Also, <code>df_airbnb.info&#40;&#41;</code> method and <code>describe&#40;df_airbnb&#41;</code> function can be used to get detailed information about dataset in Python/Pandas and Julia/DataFrames, respectively.</p> <p>There are 96 columns and 7072 rows as you can see from the output. Since not all of these columns is necessary to train model, we select some of the columns from the main dataframe.</p> <pre><code class=language-julia ># The same array in Python and Julia
@@ -125,31 +125,146 @@ columns_needed &#61; &#91;
    &quot;review_scores_value&quot;,
    &quot;price&quot;&#93;</code></pre> <pre><code class=language-python ># Python
 df_cleaned &#61; df_airbnb&#91;columns_needed&#93;</code></pre> <pre><code class=language-julia ># Julia
-df_cleaned &#61; df_airbnb&#91;&#33;, columns_needed&#93;</code></pre> <p>To see what type of elements we have in each column, you can use:</p> <ul> <li><p>Python: <code>df_cleaned.dtypes</code></p> <li><p>Julia: <code>eltype.&#40;eachcol&#40;df_cleaned&#41;&#41;</code></p> </ul> <pre><code class="plaintext code-output"># Julia REPL output
-25-element Vector{Union}:
- Union{Missing, String1}
- Union{Missing, String31}
- Union{Missing, String1}
- Union{Missing, Int64}
- Union{Missing, String31}
- Union{Missing, Int64}
- Union{Missing, Float64}
- Union{Missing, Float64}
- Union{Missing, String31}
- Union{Missing, String15}
- Union{Missing, Int64}
- Union{Missing, Float64}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, String15}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, Int64}
- Union{Missing, String15}
-</code></pre> <p>As can be seen above, Julia gives you Union type which consist of Missing and other data types &#40;Int or String&#41; meaning that we have missing data in each column. Missing data can easily be observed with <code>df_cleaned.info&#40;&#41;</code> method in Python as well. <h2 id=completed ><a href="#completed" class=header-anchor >Completed</a></h2> <div class=page-foot > <div class=copyright > &copy; Mehmet Baris Batukan. Created: January 22, 2022, and last modified: January 29, 2022. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>, the <a href="https://julialang.org">Julia programming language</a>, and <a href="https://lanyon.getpoole.com">Lanyon (A Jekyll theme)</a>. </div> </div> </div> </div> </div> <script src="/mywebsite/libs/highlight/highlight.pack.js"></script> <script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: ' '});</script> <label for=sidebar-checkbox  class=sidebar-toggle ></label>
+df_cleaned &#61; df_airbnb&#91;&#33;, columns_needed&#93;</code></pre> <p>To see what type of elements we have in each column, you can use:</p> <ul> <li><p>Python: <code>df_cleaned.dtypes</code></p> <li><p>Julia: <code>&#91;names&#40;df_cleaned&#41; eltype.&#40;eachcol&#40;df_cleaned&#41;&#41;&#93;</code></p> </ul> <pre><code class="plaintext code-output"># Julia REPL output
+25×2 Matrix{Any}:
+ "host_is_superhost"            Union{Missing, String1}
+ "cancellation_policy"          Union{Missing, String31}
+ "instant_bookable"             Union{Missing, String1}
+ "host_total_listings_count"    Union{Missing, Int64}
+ "neighbourhood_cleansed"       Union{Missing, String31}
+ "zipcode"                      Union{Missing, Int64}
+ "latitude"                     Union{Missing, Float64}
+ "longitude"                    Union{Missing, Float64}
+ "property_type"                Union{Missing, String31}
+ "room_type"                    Union{Missing, String15}
+ "accommodates"                 Union{Missing, Int64}
+ "bathrooms"                    Union{Missing, Float64}
+ "bedrooms"                     Union{Missing, Int64}
+ "beds"                         Union{Missing, Int64}
+ "bed_type"                     Union{Missing, String15}
+ "minimum_nights"               Union{Missing, Int64}
+ "number_of_reviews"            Union{Missing, Int64}
+ "review_scores_rating"         Union{Missing, Int64}
+ "review_scores_accuracy"       Union{Missing, Int64}
+ "review_scores_cleanliness"    Union{Missing, Int64}
+ "review_scores_checkin"        Union{Missing, Int64}
+ "review_scores_communication"  Union{Missing, Int64}
+ "review_scores_location"       Union{Missing, Int64}
+ "review_scores_value"          Union{Missing, Int64}
+ "price"                        Union{Missing, String15}
+</code></pre> <p>As can be seen above, Julia gives you Union type which consists of Missing and other data types &#40;<code>Int</code>, <code>String</code>, and <code>Float</code>&#41; meaning that we have missing data in each column. Also, missing data &#40;<code>NaN</code>&#41; can easily be observed with <code>df_cleaned.info&#40;&#41;</code> method in Python as well.</p> <pre><code class=language-python >df_cleaned &#61; df_cleaned.replace&#40;&#123;&quot;price&quot;: r&quot;&#91;\&#36;,&#93;&quot;&#125;, &#123;&quot;price&quot;: &quot;&quot;&#125;, regex&#61;True&#41;
+df_cleaned&#91;&#39;price&#39;&#93; &#61; df_cleaned&#91;&quot;price&quot;&#93;.astype&#40;&quot;float64&quot;&#41;</code></pre> <pre><code class=language-julia >df_cleaned.price .&#61; passmissing&#40;x -&gt; replace&#40;x, &#40;r&quot;&#91;\&#36;,&#93;&quot; &#61;&gt; &quot;&quot;&#41;&#41;&#41;.&#40;df_cleaned.price&#41;
+df_cleaned.price &#61; passmissing&#40;parse&#41;.&#40;Float64, df_cleaned.price&#41;</code></pre> <pre><code class=language-python >df_cleaned&#91;&#91;&quot;host_is_superhost&quot;, &quot;host_total_listings_count&quot;, &quot;zipcode&quot;&#93;&#93;.describe&#40;&#41;</code></pre>
+
+<pre><code class="plaintext code-output"># Python output
+host_total_listings_count	zipcode
+count	5165.000000	5101.000000
+mean	42.044530	94114.965105
+std	199.120312	15.394828
+min	0.000000	94014.000000
+25%	1.000000	94109.000000
+50%	2.000000	94114.000000
+75%	5.000000	94118.000000
+max	1475.000000	94965.000000
+</code></pre>
+
+<pre><code class=language-julia >describe&#40;df_cleaned&#91;&#33;, &#91;&quot;host_is_superhost&quot;, &quot;host_total_listings_count&quot;, &quot;zipcode&quot;&#93;&#93;&#41;</code></pre>
+
+<pre><code class="plaintext code-output"># Julia REPL output
+3×7 DataFrame
+ Row │ variable                   mean     min    median   max    nmissing  eltype                  
+     │ Symbol                     Union…   Any    Union…   Any    Int64     Union                   
+─────┼──────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ host_is_superhost                   f               t          1907  Union{Missing, String1}
+   2 │ host_total_listings_count  42.0445  0      2.0      1475       1907  Union{Missing, Int64}
+   3 │ zipcode                    94115.0  94014  94114.0  94965      1971  Union{Missing, Int64}
+</code></pre>
+
+<pre><code class=language-python >df_cleaned_NaN_zip &#61; df_cleaned.dropna&#40;subset&#61;&#91;&quot;zipcode&quot;&#93;&#41;
+df_cleaned_NaN_zip.info&#40;&#41;</code></pre>
+<pre><code class=language-julia >df_cleaned_NaN_zip &#61; dropmissing&#40;df_cleaned, &quot;zipcode&quot;&#41;
+&#91;names&#40;df_cleaned_NaN_zip&#41; eltype.&#40;eachcol&#40;df_cleaned_NaN_zip&#41;&#41;&#93;</code></pre>
+<pre><code class=language-julia ># The same array in Python and Julia
+impute_cols &#61; &#91;
+  &quot;bedrooms&quot;,
+  &quot;bathrooms&quot;,
+  &quot;beds&quot;,
+  &quot;review_scores_rating&quot;,
+  &quot;review_scores_accuracy&quot;,
+  &quot;review_scores_cleanliness&quot;,
+  &quot;review_scores_checkin&quot;,
+  &quot;review_scores_communication&quot;,
+  &quot;review_scores_location&quot;,
+  &quot;review_scores_value&quot;
+&#93;</code></pre>
+<pre><code class=language-python >df_imputed &#61; df_cleaned_NaN_zip.fillna&#40;df_cleaned_NaN_zip.median&#40;&#41;&#91;impute_cols&#93;&#41;</code></pre>
+
+<pre><code class="plaintext code-output"># Python output
+
+host_total_listings_count	zipcode	latitude	longitude	accommodates	bathrooms	bedrooms	beds	minimum_nights	number_of_reviews	review_scores_rating	review_scores_accuracy	review_scores_cleanliness	review_scores_checkin	review_scores_communication	review_scores_location	review_scores_value	price
+count	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.00000	5101.000000	5101.000000	5.101000e+03	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000
+mean	37.652421	94114.965105	37.765107	-122.431748	3.215056	1.31435	1.372672	1.768085	1.961955e+04	57.894334	95.616742	9.784552	9.650853	9.885709	9.857283	9.651833	9.458734	208.301510
+std	194.230240	15.394828	0.022179	0.026419	1.932137	0.70748	0.922757	1.193006	1.400143e+06	78.761133	6.259013	0.607183	0.699743	0.448607	0.538717	0.673541	0.748405	292.403995
+min	0.000000	94014.000000	37.706149	-122.513065	1.000000	0.00000	0.000000	0.000000	1.000000e+00	0.000000	20.000000	2.000000	2.000000	2.000000	2.000000	2.000000	2.000000	0.000000
+25%	1.000000	94109.000000	37.750436	-122.443752	2.000000	1.00000	1.000000	1.000000	2.000000e+00	5.000000	95.000000	10.000000	9.000000	10.000000	10.000000	9.000000	9.000000	99.000000
+50%	2.000000	94114.000000	37.764713	-122.426608	2.000000	1.00000	1.000000	1.000000	3.000000e+00	26.000000	97.000000	10.000000	10.000000	10.000000	10.000000	10.000000	10.000000	149.000000
+75%	4.000000	94118.000000	37.783214	-122.412679	4.000000	1.50000	2.000000	2.000000	3.000000e+01	81.000000	99.000000	10.000000	10.000000	10.000000	10.000000	10.000000	10.000000	233.000000
+max	1475.000000	94965.000000	37.810306	-122.370428	16.000000	8.00000	7.000000	14.000000	1.000000e+08	649.000000	100.000000	10.000000	10.000000	10.000000	10.000000	10.000000	10.000000	9000.000000
+</code></pre>
+
+<pre><code class=language-julia >using Statistics; using Impute
+
+df_imputed &#61; copy&#40;df_cleaned_NaN_zip&#41;
+df_imputed&#91;&#33;, impute_cols&#93; &#61; Impute.substitute&#40;df_cleaned_NaN_zip&#91;&#33;, impute_cols&#93;, statistic&#61;median&#41;
+describe&#40;df_imputed&#41;
+disallowmissing&#33;&#40;df_imputed&#41;</code></pre>
+<p>
+<pre><code class="plaintext code-output"># Julia REPL output
+25×7 DataFrame
+ Row │ variable                     mean      min              median    max               nmissing  eltype                   ⋯
+     │ Symbol                       Union…    Any              Union…    Any               Int64     Type                     ⋯
+─────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ host_is_superhost                      f                          t                        0  Union{Missing, String1}  ⋯
+   2 │ cancellation_policy                    flexible                   super_strict_60          0  Union{Missing, String31}
+   3 │ instant_bookable                       f                          t                        0  Union{Missing, String1}
+   4 │ host_total_listings_count    37.6524   0                2.0       1475                     0  Union{Missing, Int64}
+   5 │ neighbourhood_cleansed                 Bayview                    Western Addition         0  Union{Missing, String31} ⋯
+   6 │ zipcode                      94115.0   94014            94114.0   94965                    0  Int64
+   7 │ latitude                     37.7651   37.7061          37.7647   37.8103                  0  Union{Missing, Float64}
+   8 │ longitude                    -122.432  -122.513         -122.427  -122.37                  0  Union{Missing, Float64}
+   9 │ property_type                          Aparthotel                 Villa                    0  Union{Missing, String31} ⋯
+  10 │ room_type                              Entire home/apt            Shared room              0  Union{Missing, String15}
+  11 │ accommodates                 3.21506   1                2.0       16                       0  Union{Missing, Int64}
+  12 │ bathrooms                    1.31435   0.0              1.0       8.0                      0  Union{Missing, Float64}
+  13 │ bedrooms                     1.37267   0                1.0       7                        0  Union{Missing, Int64}    ⋯
+  14 │ beds                         1.76808   0                1.0       14                       0  Union{Missing, Int64}
+  15 │ bed_type                               Airbed                     Real Bed                 0  Union{Missing, String15}
+  16 │ minimum_nights               19619.6   1                3.0       100000000                0  Union{Missing, Int64}
+  17 │ number_of_reviews            57.8943   0                26.0      649                      0  Union{Missing, Int64}    ⋯
+  18 │ review_scores_rating         95.6167   20               97.0      100                      0  Union{Missing, Int64}
+  19 │ review_scores_accuracy       9.78455   2                10.0      10                       0  Union{Missing, Int64}
+  20 │ review_scores_cleanliness    9.65085   2                10.0      10                       0  Union{Missing, Int64}
+  21 │ review_scores_checkin        9.88571   2                10.0      10                       0  Union{Missing, Int64}    ⋯
+  22 │ review_scores_communication  9.85728   2                10.0      10                       0  Union{Missing, Int64}
+  23 │ review_scores_location       9.65183   2                10.0      10                       0  Union{Missing, Int64}
+  24 │ review_scores_value          9.45873   2                10.0      10                       0  Union{Missing, Int64}
+  25 │ price                        208.302   0.0              149.0     9000.0                   0  Union{Missing, Float64}  ⋯
+
+</code></pre>
+
+<h2 id=completed ><a href="#completed" class=header-anchor >Completed</a></h2>
+<div class=page-foot >
+  <div class=copyright >
+    &copy; Mehmet Baris Batukan. Created: January 22, 2022 and last modified: January 29, 2022. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>, the <a href="https://julialang.org">Julia programming language</a>, and <a href="https://lanyon.getpoole.com">Lanyon (A Jekyll theme)</a>.
+  </div>
+</div>
+</div>
+      </div>  
+    </div> 
+    
+    
+        <script src="/mywebsite/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+    
+    <label for=sidebar-checkbox  class=sidebar-toggle ></label>
