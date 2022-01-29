@@ -15,40 +15,15 @@
 
 ### Bike Share Toronto
 
-~~~
-<p align="center">
-  <i class="fas fa-circle-notch fa-spin fa-5x" style="font-size:250px;color:orange;"></i> 
-</p>
-~~~
+\textinput{project_files/bike_share_toronto/main}
+
 
 ## Completed
 
 ### Data Wrangling with Julia
 
-```julia
-a = 10
-@show a
-```
-```plaintext
-a = 10
-```
+\textinput{project_files/data_wrangling_with_julia/main}
 
-```julia
-using DataFrames
-df = DataFrame(A=1:4, B=["M", "F", "F", "M"])
-@show df
-```
-
-```plaintext
-4×2 DataFrame
- Row │ A      B
-     │ Int64  String
-─────┼───────────────
-   1 │     1  M
-   2 │     2  F
-   3 │     3  F
-   4 │     4  M
-```
 
 <!-- 
 ~~~
