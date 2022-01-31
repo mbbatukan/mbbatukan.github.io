@@ -4,9 +4,11 @@
 
 :root {
   /* --block-background: hsl(0, 0%, 94%); */
-  --block-background: rgba(100, 100, 100, 0.2);
+  /* --block-background: rgba(100, 100, 100, 0.2); */
+  --block-background: rgb(34, 38, 44);
   /* --output-background: hsl(0, 0%, 98%); */
-  --output-background: rgba(100, 100, 100, 0.2);
+  /* --output-background: rgba(100, 100, 100, 0.2); */
+  --output-background: rgb(34, 38, 44);
 
   --small: 14px;
   --normal: 19px;
@@ -66,7 +68,7 @@ html {
 .page-foot {
   font-size: 80%;
   font-family: -apple-system, Arial, serif;
-  color: rgb(200, 200, 200);
+  color: rgb(202, 209, 216);
   /* color: #ff5500; */
   text-align: center;
   margin-top: 6em;
@@ -368,7 +370,9 @@ code {
   color: #fff;
   text-align: left;
   /* background-color: #fff; */
-  background-color: rgba(100, 100, 100, 0.2);
+  /* background-color: rgba(100, 100, 100, 0.2); */
+  /* background-color: rgb(23, 27, 33); */
+  background-color: rgb(34, 38, 44);
 
   padding: 30px;
   padding-bottom: 10px;
@@ -404,7 +408,9 @@ code {
   /* color: #495057; */
   color: #fff;
   /* background-color: #fff; */
-  background-color: rgb(100, 100, 100);
+  /* background-color: rgb(100, 100, 100); */
+  /* background-color: rgb(34, 38, 44); */
+  background-color: rgb(14, 17, 22);
   background-clip: padding-box;
   border: 1px solid #ced4da;
   outline: none;
