@@ -10,9 +10,22 @@
 
 ~~~
 <p align="center">
-  <img src="/assets/Me.JPG">
+  <img src="/assets/me1.JPG">
 </p>
 ~~~
+
+~~~
+<p align="center">
+  <img src="/assets/me2.JPG">
+</p>
+~~~
+
+~~~
+<p align="center">
+  <img src="/assets/me3.JPG">
+</p>
+~~~
+
 ---
 # Contact form
 ~~~

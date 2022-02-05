@@ -18,8 +18,11 @@
     - page with tag [`machine_learning`](/tag/machine_learning/)
     - page with tag [`artificial_intelligence`](/tag/artificial_intelligence/)
 
-
 * page with tag [`publications`](/tag/publications/)
     - page with tag [`scientific`](/tag/scientific/)
     - page with tag [`journal`](/tag/journal/)  
     - page with tag [`article`](/tag/article/)     
+
+* page with tag [`travel`](/tag/travel/)
+    - page with tag [`food`](/tag/food/)
+    - page with tag [`landscape`](/tag/landscape/) 
