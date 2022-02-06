@@ -48,7 +48,8 @@ body {
 }
 
 html {
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 19px;
   line-height: 1.5;
 }
@@ -277,7 +278,8 @@ body {
 }
 
 html {
-  font-family: -apple-system, "PT Serif", Georgia, "Times New Roman", serif;
+  /* font-family: -apple-system, "PT Serif", Georgia, "Times New Roman", serif; */
+  font-family: "PT Serif", Georgia, "Times New Roman", serif;
 }
 
 h1,
@@ -286,7 +288,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: -apple-system, "PT Sans", Helvetica, Arial, sans-serif;
+  /* font-family: -apple-system, "PT Sans", Helvetica, Arial, sans-serif; */
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
   /* color: #313131; */
   color: rgb(250, 250, 250);
@@ -399,7 +402,8 @@ h6 {
   width: 14rem;
   visibility: hidden;
   overflow-y: auto;
-  font-family: -apple-system, "PT Sans", Helvetica, Arial, sans-serif;
+  /* font-family: -apple-system, "PT Sans", Helvetica, Arial, sans-serif; */
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-size: 0.875rem; /* 15px */
   color: rgba(255, 255, 255, 0.6);
   /* color: rgba(25, 25, 25, 0.6); */

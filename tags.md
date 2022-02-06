@@ -15,8 +15,8 @@
     - page with tag [`code`](/tag/code/)
     - page with tag [`julia`](/tag/julia/)
     - page with tag [`python`](/tag/python/)
-    - page with tag [`machine_learning`](/tag/machine_learning/)
-    - page with tag [`artificial_intelligence`](/tag/artificial_intelligence/)
+    - page with tag [`machine learning`](/tag/machine_learning/)
+    - page with tag [`artificial intelligence`](/tag/artificial_intelligence/)
 
 * page with tag [`publications`](/tag/publications/)
     - page with tag [`scientific`](/tag/scientific/)

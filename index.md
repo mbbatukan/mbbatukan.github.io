@@ -7,6 +7,13 @@
 
 # About me (Website is under construction!)
 
+* [Patents](/patents/)
+* [Projects](/projects/)
+* [Publications](/publications/)
+* [Travel Logs](/travel_logs/)
+
+---
+
 
 ~~~
 <p align="center">
@@ -17,12 +24,6 @@
 ~~~
 <p align="center">
   <img src="/assets/me2.JPG">
-</p>
-~~~
-
-~~~
-<p align="center">
-  <img src="/assets/me3.JPG">
 </p>
 ~~~
 
