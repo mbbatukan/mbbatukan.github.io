@@ -35,7 +35,6 @@ Because the original dataset had a massive file size, parcels outside the City o
     <p align="center">
       <img src="https://raw.githubusercontent.com/mbbatukan/ExploratoryDataAnalysisLAcity/main/figures/blogpost/Figure1.png">
     </p>
-
 </details>
 ~~~
 \
