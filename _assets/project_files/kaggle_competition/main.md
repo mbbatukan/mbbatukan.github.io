@@ -150,6 +150,6 @@ df_submit["label"] = y_submit
 df_submit.to_csv(f"{local_dir}/submit_REV2.csv")
 ```
 
-Github repository for this project: [https://github.com/mbbatukan/KaggleCompetitionSpamNotSpam](https://github.com/mbbatukan/KaggleCompetitionSpamNotSpam)
+[Click here to access GitHub repository](https://github.com/mbbatukan/KaggleCompetitionSpamNotSpam)
 
 ---
