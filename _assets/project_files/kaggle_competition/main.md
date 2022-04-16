@@ -1,6 +1,6 @@
 @def title = "Projects"
 
-### Kaggle machine learning competition: Phishing Email Detection
+### Kaggle Machine Learning Competition: Phishing Email Detection
 
 1. Import modules
 
@@ -137,8 +137,9 @@ pr_display = metrics.PrecisionRecallDisplay(precision=precision, recall=recall).
       <img src="https://raw.githubusercontent.com/mbbatukan/KaggleCompetitionSpamNotSpam/main/figures/confusion_matrix.png">
     </p>
 </details>
+<p></p>
 ~~~
-\
+
 7. Submit the results
 
 ```python

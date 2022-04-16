@@ -39,10 +39,10 @@ for year in years:
     plt.savefig(f"../../../project/weather_{year}.svg", dpi=1200, \
                 format="svg", transparent=False, facecolor="white")
 ```
-#### Saved figures from Python
+
 ~~~
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Saved figures from Python</summary>
     <p align="center">
       <img src="https://raw.githubusercontent.com/mbbatukan/BikeShareToronto/main/project/weather_2017.svg">
       <img src="https://raw.githubusercontent.com/mbbatukan/BikeShareToronto/main/project/weather_2018.svg">
@@ -117,10 +117,9 @@ for year in years
 end
 ```
 
-#### Saved figures from Julia
 ~~~
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Saved figures from Julia</summary>
     <p align="center">
       <img src="https://raw.githubusercontent.com/mbbatukan/BikeShareToronto/main/project/weather_2017_julia.svg">
       <img src="https://raw.githubusercontent.com/mbbatukan/BikeShareToronto/main/project/weather_2018_julia.svg">
