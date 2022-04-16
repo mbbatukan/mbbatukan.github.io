@@ -19,6 +19,9 @@
 
 ## Completed
 
+\textinput{project_files/exploratory_data_analysis/main}
+
+\textinput{project_files/kaggle_competition/main}
 
 <!-- 
 ~~~
