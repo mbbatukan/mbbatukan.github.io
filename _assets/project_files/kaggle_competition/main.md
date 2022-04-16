@@ -131,16 +131,14 @@ pr_display = metrics.PrecisionRecallDisplay(precision=precision, recall=recall).
 ```
 
 ~~~
-<hr>
 <details>
   <summary>Confusion Matrix and Precision vs Recall Plot </summary>
     <p align="center">
       <img src="https://raw.githubusercontent.com/mbbatukan/KaggleCompetitionSpamNotSpam/main/figures/confusion_matrix.png">
     </p>
 </details>
-<hr/>
 ~~~
-
+\
 7. Submit the results
 
 ```python
@@ -150,3 +148,7 @@ df_submit = test_data.reset_index()[["id"]].copy().set_index("id")
 df_submit["label"] = y_submit
 df_submit.to_csv(f"{local_dir}/submit_REV2.csv")
 ```
+
+Github repository for this project: [https://github.com/mbbatukan/KaggleCompetitionSpamNotSpam](https://github.com/mbbatukan/KaggleCompetitionSpamNotSpam)
+
+---
