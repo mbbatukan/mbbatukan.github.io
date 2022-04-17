@@ -5,15 +5,19 @@
 @def rss_pubdate = Date(2022, 1, 22)
 @def tags = ["home", "aboutme", "info", "contact", "email"]
 
+# Quick links
+
+~~~
+<div class="row">
+  <div class="column"><a href="/patents/"><i class="fas fa-lightbulb-on fa-fw fa-1x"></i><br>Patents</a></div>
+  <div class="column"><a href="/projects/"><i class="fas fa-laptop-code fa-fw fa-1x"></i><br>Projects</a></div>
+  <div class="column"><a href="/publications/"><i class="fas fa-file-certificate fa-fw fa-1x"></i><br>Publications</a></div>
+  <div class="column"><a href="/travel_logs/"><i class="fas fa-plane fa-fw fa-1x"></i><br>Travel Logs</a></div>
+</div>
+~~~
+
+
 # About me (Website is under construction!)
-
-* [Patents](/patents/)
-* [Projects](/projects/)
-* [Publications](/publications/)
-* [Travel Logs](/travel_logs/)
-
----
-
 
 ~~~
 <p align="center">

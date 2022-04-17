@@ -2,6 +2,8 @@
 
 ### Kaggle Machine Learning Competition: Phishing Email Detection
 
+[Link to private Kaggle competition](https://www.kaggle.com/competitions/civ1498project1)
+
 1. Import modules
 
 ```python

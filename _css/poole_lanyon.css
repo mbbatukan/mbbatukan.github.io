@@ -602,3 +602,26 @@ a.sidebar-nav-item:focus {
 code {
   font-size: 16px;
 }
+
+
+.column {
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  width: 125px;
+  white-space: normal;
+}
+
+.row {
+  text-align: center;
+  vertical-align: middle;
+  overflow-x: scroll;
+  white-space: nowrap;
+
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
