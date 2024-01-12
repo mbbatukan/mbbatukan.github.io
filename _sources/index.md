@@ -12,22 +12,22 @@ html_theme.sidebar_secondary.remove: true
 
 ## About me (Website is under construction!)
 
-~~~
+```{html}
 <p align="center">
   <img src="/_static/me1.JPG">
 </p>
-~~~
+```
 
-~~~
+```{html}
 <p align="center">
   <img src="/_static/me2.JPG">
 </p>
-~~~
+```
 
 
-Please fill out this form to contact me:
+## Please fill out this form to contact me:
 
-~~~
+```{html}
 <form action="https://formspree.io/f/myyrzebr" method="POST">
     <label for="name">Your Name:</label><br>
     <input type="text" id="name" name="name" required><br>
@@ -37,4 +37,4 @@ Please fill out this form to contact me:
     <textarea id="message" name="message" required></textarea><br>
     <input type="submit" value="Send">
 </form>
-~~~
+```
