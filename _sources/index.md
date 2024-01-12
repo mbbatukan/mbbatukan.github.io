@@ -13,7 +13,7 @@ html_theme.sidebar_secondary.remove: true
 > **Note: This website is currently under construction. Some pages and text will be published once it's ready. Thank you for your patience.**
 
 
-# About me
+## About me
 I'm an inventor, a PhD student, and (most importantly) an emotionally artistic person. You won’t believe it, eh!
 
 
