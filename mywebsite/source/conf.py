@@ -46,18 +46,18 @@ def setup(app):
 
 html_static_path = ["_static"]
 html_css_files = ["_static/custom.css"]
-# html_extra_path = ["_static/google433b1eb8ef1cebce.html"]
+html_extra_path = ["_static/google433b1eb8ef1cebce.html"]
 html_extra_path = []
 html_context = {
     "default_mode": "dark",
 }
 
 html_theme = "pydata_sphinx_theme"
-html_logo = "_static/person-solid.svg"
+html_logo = "_static/person-snowboarding.svg"
 html_theme_options = {
     "logo": {
         "text": "Mehmet Baris Batukan",
-        "image_dark": "_static/person-solid.svg",
+        "image_dark": "_static/person-snowboarding.svg",
     },
     "show_prev_next": False,
     "navigation_depth": 4,
@@ -70,13 +70,28 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/mbbatukan/ModularBuildingPy",
+            "url": "https://github.com/mbbatukan/",
             "icon": "fa-brands fa-github-square",
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/batukan/",
+            "icon": "fa-brands fa-linkedin",
+        },
+        {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/barisbatukan/",
+            "icon": "fa-brands fa-instagram",
         },
         {
             "name": "Threads",
             "url": "https://www.threads.net/@barisbatukan",
             "icon": "fa-brands fa-square-threads",
+        },
+        {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/@barisbatukan/",
+            "icon": "fa-brands fa-square-youtube",
         },
     ],
     "use_edit_page_button": True,
