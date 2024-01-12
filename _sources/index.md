@@ -12,22 +12,16 @@ html_theme.sidebar_secondary.remove: true
 
 ## About me (Website is under construction!)
 
-::: {html}
-<p align="center">
-  <img src="/_static/me1.JPG">
-</p>
-:::
+<img src="/_static/me1.JPG">
 
-::: {html}
-<p align="center">
-  <img src="/_static/me2.JPG">
-</p>
-:::
 
+![Image 1](/_static/me1.JPG)
+
+![Image 2](/_static/me2.JPG)
 
 ## Please fill out this form to contact me:
 
-::: {html}
+{::nomarkdown}
 <form action="https://formspree.io/f/myyrzebr" method="POST">
     <label for="name">Your Name:</label><br>
     <input type="text" id="name" name="name" required><br>
@@ -37,4 +31,4 @@ html_theme.sidebar_secondary.remove: true
     <textarea id="message" name="message" required></textarea><br>
     <input type="submit" value="Send">
 </form>
-:::
+{::/nomarkdown}
