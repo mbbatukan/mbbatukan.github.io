@@ -81,7 +81,7 @@ html_theme_options = {
         {
             "name": "Instagram",
             "url": "https://www.instagram.com/barisbatukan/",
-            "icon": "fa-brands fa-instagram",
+            "icon": "fa-brands fa-square-instagram",
         },
         {
             "name": "Threads",
