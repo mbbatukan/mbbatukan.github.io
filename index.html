@@ -349,13 +349,13 @@ document.write(`
 <h1>Welcome to My Personal Website!<a class="headerlink" href="#welcome-to-my-personal-website" title="Link to this heading">#</a></h1>
 <section id="about-me-website-is-under-construction">
 <h2>About me (Website is under construction!)<a class="headerlink" href="#about-me-website-is-under-construction" title="Link to this heading">#</a></h2>
-<img src="/_static/me1.JPG">
-<p><img alt="Image 1" src="_images/me1.JPG" /></p>
-<p><img alt="Image 2" src="_images/me2.JPG" /></p>
+<img src="/_static/me1.JPG" alt="Image 1" width="500"/>
+<br>
+<img src="/_static/me2.JPG" alt="Image 2" width="500"/>
+<br>
 </section>
 <section id="please-fill-out-this-form-to-contact-me">
 <h2>Please fill out this form to contact me:<a class="headerlink" href="#please-fill-out-this-form-to-contact-me" title="Link to this heading">#</a></h2>
-<p>{::nomarkdown}</p>
 <form action="https://formspree.io/f/myyrzebr" method="POST">
     <label for="name">Your Name:</label><br>
     <input type="text" id="name" name="name" required><br>
@@ -365,7 +365,6 @@ document.write(`
     <textarea id="message" name="message" required></textarea><br>
     <input type="submit" value="Send">
 </form>
-{:/nomarkdown}
 </section>
 </section>
 
