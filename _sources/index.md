@@ -31,4 +31,4 @@ html_theme.sidebar_secondary.remove: true
     <textarea id="message" name="message" required></textarea><br>
     <input type="submit" value="Send">
 </form>
-{::/nomarkdown}
+{:/nomarkdown}
