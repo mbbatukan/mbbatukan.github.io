@@ -26,7 +26,7 @@ Will be updated soon.
 </p>
 <br>
 
-# Patents
+<!-- # Patents -->
 This page contains information about my patents.
 
 ```{toctree}
@@ -35,7 +35,7 @@ This page contains information about my patents.
 patents/index
 ```
 
-# Projects
+<!-- # Projects -->
 Data science projects that I have worked on.
 
 ```{toctree}
@@ -44,7 +44,7 @@ Data science projects that I have worked on.
 projects/index
 ```
 
-# Publications
+<!-- # Publications -->
 Research publications that I have contributed to.
 
 ```{toctree}
@@ -53,7 +53,7 @@ Research publications that I have contributed to.
 publications/index
 ```
 
-# Travel Logs
+<!-- # Travel Logs -->
 Travel logs from my trips.
 
 ```{toctree}
