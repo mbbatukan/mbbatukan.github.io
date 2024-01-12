@@ -26,6 +26,42 @@ Will be updated soon.
 </p>
 <br>
 
+## Patents
+This page contains information about my patents.
+
+```{toctree}
+:maxdepth: 2
+
+patents/index
+```
+
+## Projects
+Data science projects that I have worked on.
+
+```{toctree}
+:maxdepth: 2
+
+projects/index
+```
+
+## Publications
+Research publications that I have contributed to.
+
+```{toctree}
+:maxdepth: 2
+
+publications/index
+```
+
+## Travel Logs
+Travel logs from my trips.
+
+```{toctree}
+:maxdepth: 2
+
+travel_logs/index
+```
+
 ## Please fill out this form to contact me:
 
 <p style="text-align: center;">
@@ -39,3 +75,4 @@ Will be updated soon.
     <input type="submit" value="Send">
 </form>
 </p>
+

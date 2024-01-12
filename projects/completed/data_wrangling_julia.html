@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Wrangling with Julia &#8212; Personal Website None documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script src="../../_static/documentation_options.js?v=548ea7bd"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-HRLM8WKPT0"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HRLM8WKPT0');
+            </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HRLM8WKPT0');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/completed/data_wrangling_julia';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Jan 12, 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/person-solid.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/person-solid.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Mehmet Baris Batukan</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../patents/index.html">
+                        Patent 1
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../publications/index.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../travel_logs/index.html">
+                        Vancouver, Canada (June 2023)
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mbbatukan/ModularBuildingPy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.threads.net/@barisbatukan" title="Threads" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-threads fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Threads</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../patents/index.html">
+                        Patent 1
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../publications/index.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../travel_logs/index.html">
+                        Vancouver, Canada (June 2023)
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mbbatukan/ModularBuildingPy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.threads.net/@barisbatukan" title="Threads" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-threads fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Threads</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Data...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="data-wrangling-with-julia">
+<h1>Data Wrangling with Julia<a class="headerlink" href="#data-wrangling-with-julia" title="Link to this heading">#</a></h1>
+<p>Data wrangling is a very important step in machine learning, and raw (scraped/downloaded from the internet) data should be cleaned out before training the models. Pandas is incredibly powerful and well-developed module in Python to analyze and manipulate the data, so I have gained some basic experience in the last few years. However, Julia, high-level programming language, has been increasingly getting popular in data science. While I try to learn syntax of Julia to add to my skill set, I prepared this post to show similarities in between Julia/DataFrames and Python/Pandas. I hope this will encourage people to see how easy to code in Julia.</p>
+<p>Recently, there was an online event to learn basics of machine learning (Luckily, I attended). In the first part, data wrangling was explained well in detail using Python/Pandas. Those who are interested in seeing the original repository by Shadi Khalifa and accessing to the source files can refer to <a class="reference external" href="https://github.com/skhalifa/CAC_S20">the repository</a>.</p>
+<p>Basically, I repeated what it was done in Python/Julia to gain confidence in Julia/DataFrames. This first block of code is the Python code and following codes are Julia code and output from Julia REPL, respectively. I didn’t explicitly show Python output, but it can be found in <a class="reference external" href="https://github.com/skhalifa/CAC_S20/blob/master/DataPrepHandsOn.ipynb">Jupyter Notebook</a>.</p>
+<p>There will be no separate reference for each block of code, and well-written documentation of the both modules can be accessed using the links below.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/">Python/Pandas</a></p></li>
+<li><p><a class="reference external" href="https://dataframes.juliadata.org/stable/">Julia/DataFrames</a></p></li>
+</ul>
+<p>Since both modules and programming languages are getting updates frequently, some of codes may not properly run in the most recent version. Therefore, I listed the versions that I used to create outputs.</p>
+<ul class="simple">
+<li><p>Python: 3.9.7</p>
+<ul>
+<li><p>Pandas (conda): 1.3.5</p></li>
+</ul>
+</li>
+<li><p>Julia: 1.7.1</p>
+<ul>
+<li><p>CSV: 0.9.11</p></li>
+<li><p>DataFrames: 1.3.1</p></li>
+<li><p>DataFramesMeta: 0.10.0</p></li>
+</ul>
+</li>
+</ul>
+<p>If you are new to Julia, you can refer to <a class="reference external" href="https://docs.julialang.org/en/v1/">Julia documentation</a> and watch <a class="reference external" href="https://www.youtube.com/c/juliafortalentedamateurs">julia for talented ameteurs</a> channel in YouTube to gain basic knowledge.</p>
+<p>First of all, we need to import modules and CSV (data) file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python</span>
+<span class="kn">import</span> <span class="nn">Pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df_airbnb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;airbnb.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># Julia</span>
+<span class="k">using</span><span class="w"> </span><span class="n">CSV</span><span class="p">,</span><span class="w"> </span><span class="n">DataFrames</span>
+
+<span class="n">df_airbnb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataFrame</span><span class="p">(</span><span class="n">CSV</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s">&quot;airbnb.csv&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The first/last 5 rows of the dataframe can be printed with following commands:</p>
+<ul class="simple">
+<li><p>Python: <code class="docutils literal notranslate"><span class="pre">df_airbnb.head(5)</span></code> and <code class="docutils literal notranslate"><span class="pre">df_airbnb.tail(5)</span></code></p></li>
+<li><p>Julia: <code class="docutils literal notranslate"><span class="pre">first(df_airbnb,</span> <span class="pre">5)</span></code> and <code class="docutils literal notranslate"><span class="pre">last(df_airbnb,</span> <span class="pre">5)</span></code></p></li>
+</ul>
+<p>If you are using <a class="reference external" href="https://code.visualstudio.com">vscode</a> and <a class="reference external" href="https://code.visualstudio.com/docs/languages/julia">Julia extension</a> is installed. Dataframe can be visualized by <code class="docutils literal notranslate"><span class="pre">vscodedisplay(df_airbnb)</span></code>.</p>
+<p>Let’s see how many rows and columns we have in the dataset.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python</span>
+<span class="n">df_airbnb</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># Julia</span>
+<span class="nd">@show</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">df_airbnb</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;plaintext code-output&quot;</span><span class="o">&gt;</span><span class="c1"># Julia REPL output</span>
+<span class="n">size</span><span class="p">(</span><span class="n">df_airbnb</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7072</span><span class="p">,</span> <span class="mi">96</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Also, <code class="docutils literal notranslate"><span class="pre">df_airbnb.info()</span></code> method and <code class="docutils literal notranslate"><span class="pre">describe(df_airbnb)</span></code> function can be used to get detailed information about dataset in Python/Pandas and Julia/DataFrames, respectively.</p>
+<p>There are 96 columns and 7072 rows as you can see from the output. Since not all of these columns is necessary to train model, we select some of the columns from the main dataframe.</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># The same array in Python and Julia</span>
+<span class="n">columns_needed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">   </span><span class="s">&quot;host_is_superhost&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;cancellation_policy&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;instant_bookable&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;host_total_listings_count&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;neighbourhood_cleansed&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;zipcode&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;latitude&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;longitude&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;property_type&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;room_type&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;accommodates&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;bathrooms&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;bedrooms&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;beds&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;bed_type&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;minimum_nights&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;number_of_reviews&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;review_scores_rating&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;review_scores_accuracy&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;review_scores_cleanliness&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;review_scores_checkin&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;review_scores_communication&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;review_scores_location&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;review_scores_value&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;price&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python</span>
+<span class="n">df_cleaned</span> <span class="o">=</span> <span class="n">df_airbnb</span><span class="p">[</span><span class="n">columns_needed</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># Julia</span>
+<span class="n">df_cleaned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_airbnb</span><span class="p">[</span><span class="o">!</span><span class="p">,</span><span class="w"> </span><span class="n">columns_needed</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To see what type of elements we have in each column, you can use:</p>
+<ul class="simple">
+<li><p>Python: <code class="docutils literal notranslate"><span class="pre">df_cleaned.dtypes</span></code></p></li>
+<li><p>Julia: <code class="docutils literal notranslate"><span class="pre">[names(df_cleaned)</span> <span class="pre">eltype.(eachcol(df_cleaned))]</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;pre&gt;&lt;code class=&quot;plaintext code-output&quot;&gt;# Julia REPL output
+25×2 Matrix{Any}:
+ &quot;host_is_superhost&quot;            Union{Missing, String1}
+ &quot;cancellation_policy&quot;          Union{Missing, String31}
+ &quot;instant_bookable&quot;             Union{Missing, String1}
+ &quot;host_total_listings_count&quot;    Union{Missing, Int64}
+ &quot;neighbourhood_cleansed&quot;       Union{Missing, String31}
+ &quot;zipcode&quot;                      Union{Missing, Int64}
+ &quot;latitude&quot;                     Union{Missing, Float64}
+ &quot;longitude&quot;                    Union{Missing, Float64}
+ &quot;property_type&quot;                Union{Missing, String31}
+ &quot;room_type&quot;                    Union{Missing, String15}
+ &quot;accommodates&quot;                 Union{Missing, Int64}
+ &quot;bathrooms&quot;                    Union{Missing, Float64}
+ &quot;bedrooms&quot;                     Union{Missing, Int64}
+ &quot;beds&quot;                         Union{Missing, Int64}
+ &quot;bed_type&quot;                     Union{Missing, String15}
+ &quot;minimum_nights&quot;               Union{Missing, Int64}
+ &quot;number_of_reviews&quot;            Union{Missing, Int64}
+ &quot;review_scores_rating&quot;         Union{Missing, Int64}
+ &quot;review_scores_accuracy&quot;       Union{Missing, Int64}
+ &quot;review_scores_cleanliness&quot;    Union{Missing, Int64}
+ &quot;review_scores_checkin&quot;        Union{Missing, Int64}
+ &quot;review_scores_communication&quot;  Union{Missing, Int64}
+ &quot;review_scores_location&quot;       Union{Missing, Int64}
+ &quot;review_scores_value&quot;          Union{Missing, Int64}
+ &quot;price&quot;                        Union{Missing, String15}
+&lt;/code&gt;&lt;/pre&gt;
+</pre></div>
+</div>
+<p>As can be seen above, Julia gives you Union type which consists of Missing and other data types (<code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">String</span></code>, and <code class="docutils literal notranslate"><span class="pre">Float</span></code>) meaning that we have missing data in each column. Also, missing data (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>) can easily be observed with <code class="docutils literal notranslate"><span class="pre">df_cleaned.info()</span></code> method in Python as well.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cleaned</span> <span class="o">=</span> <span class="n">df_cleaned</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;[\$,]&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">},</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_cleaned</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;float64&quot;</span><span class="p">)</span>  
+</pre></div>
+</div>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">df_cleaned</span><span class="o">.</span><span class="n">price</span><span class="w"> </span><span class="o">.=</span><span class="w"> </span><span class="n">passmissing</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">replace</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="sa">r</span><span class="sr">&quot;[</span><span class="err">\</span><span class="sr">$,]&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)))</span><span class="o">.</span><span class="p">(</span><span class="n">df_cleaned</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
+<span class="n">df_cleaned</span><span class="o">.</span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passmissing</span><span class="p">(</span><span class="n">parse</span><span class="p">)</span><span class="o">.</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="w"> </span><span class="n">df_cleaned</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cleaned</span><span class="p">[[</span><span class="s2">&quot;host_is_superhost&quot;</span><span class="p">,</span> <span class="s2">&quot;host_total_listings_count&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;plaintext code-output&quot;</span><span class="o">&gt;</span><span class="c1"># Python output</span>
+<span class="n">host_total_listings_count</span>	<span class="n">zipcode</span>
+<span class="n">count</span>	<span class="mf">5165.000000</span>	<span class="mf">5101.000000</span>
+<span class="n">mean</span>	<span class="mf">42.044530</span>	<span class="mf">94114.965105</span>
+<span class="n">std</span>	<span class="mf">199.120312</span>	<span class="mf">15.394828</span>
+<span class="nb">min</span>	<span class="mf">0.000000</span>	<span class="mf">94014.000000</span>
+<span class="mi">25</span><span class="o">%</span>	<span class="mf">1.000000</span>	<span class="mf">94109.000000</span>
+<span class="mi">50</span><span class="o">%</span>	<span class="mf">2.000000</span>	<span class="mf">94114.000000</span>
+<span class="mi">75</span><span class="o">%</span>	<span class="mf">5.000000</span>	<span class="mf">94118.000000</span>
+<span class="nb">max</span>	<span class="mf">1475.000000</span>	<span class="mf">94965.000000</span>
+<span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">describe</span><span class="p">(</span><span class="n">df_cleaned</span><span class="p">[</span><span class="o">!</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;host_is_superhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;host_total_listings_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;zipcode&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;pre&gt;&lt;code class=&quot;plaintext code-output&quot;&gt;# Julia REPL output
+3×7 DataFrame
+ Row │ variable                   mean     min    median   max    nmissing  eltype                  
+     │ Symbol                     Union…   Any    Union…   Any    Int64     Union                   
+─────┼──────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ host_is_superhost                   f               t          1907  Union{Missing, String1}
+   2 │ host_total_listings_count  42.0445  0      2.0      1475       1907  Union{Missing, Int64}
+   3 │ zipcode                    94115.0  94014  94114.0  94965      1971  Union{Missing, Int64}
+&lt;/code&gt;&lt;/pre&gt;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cleaned_NaN_zip</span> <span class="o">=</span> <span class="n">df_cleaned</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;zipcode&quot;</span><span class="p">])</span>
+<span class="n">df_cleaned_NaN_zip</span><span class="o">.</span><span class="n">info</span><span class="p">()</span> 
+</pre></div>
+</div>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">df_cleaned_NaN_zip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dropmissing</span><span class="p">(</span><span class="n">df_cleaned</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;zipcode&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="n">names</span><span class="p">(</span><span class="n">df_cleaned_NaN_zip</span><span class="p">)</span><span class="w"> </span><span class="n">eltype</span><span class="o">.</span><span class="p">(</span><span class="n">eachcol</span><span class="p">(</span><span class="n">df_cleaned_NaN_zip</span><span class="p">))]</span>
+</pre></div>
+</div>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># The same array in Python and Julia</span>
+<span class="n">impute_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s">&quot;bedrooms&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;bathrooms&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;beds&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;review_scores_rating&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;review_scores_accuracy&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;review_scores_cleanliness&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;review_scores_checkin&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;review_scores_communication&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;review_scores_location&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;review_scores_value&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_imputed</span> <span class="o">=</span> <span class="n">df_cleaned_NaN_zip</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_cleaned_NaN_zip</span><span class="o">.</span><span class="n">median</span><span class="p">()[</span><span class="n">impute_cols</span><span class="p">])</span>
+</pre></div>
+</div>
+<pre><code class="plaintext code-output"># Python output
+
+host_total_listings_count	zipcode	latitude	longitude	accommodates	bathrooms	bedrooms	beds	minimum_nights	number_of_reviews	review_scores_rating	review_scores_accuracy	review_scores_cleanliness	review_scores_checkin	review_scores_communication	review_scores_location	review_scores_value	price
+count	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.00000	5101.000000	5101.000000	5.101000e+03	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000	5101.000000
+mean	37.652421	94114.965105	37.765107	-122.431748	3.215056	1.31435	1.372672	1.768085	1.961955e+04	57.894334	95.616742	9.784552	9.650853	9.885709	9.857283	9.651833	9.458734	208.301510
+std	194.230240	15.394828	0.022179	0.026419	1.932137	0.70748	0.922757	1.193006	1.400143e+06	78.761133	6.259013	0.607183	0.699743	0.448607	0.538717	0.673541	0.748405	292.403995
+min	0.000000	94014.000000	37.706149	-122.513065	1.000000	0.00000	0.000000	0.000000	1.000000e+00	0.000000	20.000000	2.000000	2.000000	2.000000	2.000000	2.000000	2.000000	0.000000
+25%	1.000000	94109.000000	37.750436	-122.443752	2.000000	1.00000	1.000000	1.000000	2.000000e+00	5.000000	95.000000	10.000000	9.000000	10.000000	10.000000	9.000000	9.000000	99.000000
+50%	2.000000	94114.000000	37.764713	-122.426608	2.000000	1.00000	1.000000	1.000000	3.000000e+00	26.000000	97.000000	10.000000	10.000000	10.000000	10.000000	10.000000	10.000000	149.000000
+75%	4.000000	94118.000000	37.783214	-122.412679	4.000000	1.50000	2.000000	2.000000	3.000000e+01	81.000000	99.000000	10.000000	10.000000	10.000000	10.000000	10.000000	10.000000	233.000000
+max	1475.000000	94965.000000	37.810306	-122.370428	16.000000	8.00000	7.000000	14.000000	1.000000e+08	649.000000	100.000000	10.000000	10.000000	10.000000	10.000000	10.000000	10.000000	9000.000000
+</code></pre>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Statistics</span><span class="p">;</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">Impute</span>
+
+<span class="n">df_imputed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">copy</span><span class="p">(</span><span class="n">df_cleaned_NaN_zip</span><span class="p">)</span>
+<span class="n">df_imputed</span><span class="p">[</span><span class="o">!</span><span class="p">,</span><span class="w"> </span><span class="n">impute_cols</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Impute</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">df_cleaned_NaN_zip</span><span class="p">[</span><span class="o">!</span><span class="p">,</span><span class="w"> </span><span class="n">impute_cols</span><span class="p">],</span><span class="w"> </span><span class="n">statistic</span><span class="o">=</span><span class="n">median</span><span class="p">)</span>
+<span class="n">describe</span><span class="p">(</span><span class="n">df_imputed</span><span class="p">)</span>
+<span class="n">disallowmissing!</span><span class="p">(</span><span class="n">df_imputed</span><span class="p">)</span>
+</pre></div>
+</div>
+<pre><code class="plaintext code-output"># Julia REPL output
+25×7 DataFrame
+ Row │ variable                     mean      min              median    max               nmissing  eltype                   ⋯
+     │ Symbol                       Union…    Any              Union…    Any               Int64     Type                     ⋯
+─────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ host_is_superhost                      f                          t                        0  Union{Missing, String1}  ⋯
+   2 │ cancellation_policy                    flexible                   super_strict_60          0  Union{Missing, String31}
+   3 │ instant_bookable                       f                          t                        0  Union{Missing, String1}
+   4 │ host_total_listings_count    37.6524   0                2.0       1475                     0  Union{Missing, Int64}
+   5 │ neighbourhood_cleansed                 Bayview                    Western Addition         0  Union{Missing, String31} ⋯
+   6 │ zipcode                      94115.0   94014            94114.0   94965                    0  Int64
+   7 │ latitude                     37.7651   37.7061          37.7647   37.8103                  0  Union{Missing, Float64}
+   8 │ longitude                    -122.432  -122.513         -122.427  -122.37                  0  Union{Missing, Float64}
+   9 │ property_type                          Aparthotel                 Villa                    0  Union{Missing, String31} ⋯
+  10 │ room_type                              Entire home/apt            Shared room              0  Union{Missing, String15}
+  11 │ accommodates                 3.21506   1                2.0       16                       0  Union{Missing, Int64}
+  12 │ bathrooms                    1.31435   0.0              1.0       8.0                      0  Union{Missing, Float64}
+  13 │ bedrooms                     1.37267   0                1.0       7                        0  Union{Missing, Int64}    ⋯
+  14 │ beds                         1.76808   0                1.0       14                       0  Union{Missing, Int64}
+  15 │ bed_type                               Airbed                     Real Bed                 0  Union{Missing, String15}
+  16 │ minimum_nights               19619.6   1                3.0       100000000                0  Union{Missing, Int64}
+  17 │ number_of_reviews            57.8943   0                26.0      649                      0  Union{Missing, Int64}    ⋯
+  18 │ review_scores_rating         95.6167   20               97.0      100                      0  Union{Missing, Int64}
+  19 │ review_scores_accuracy       9.78455   2                10.0      10                       0  Union{Missing, Int64}
+  20 │ review_scores_cleanliness    9.65085   2                10.0      10                       0  Union{Missing, Int64}
+  21 │ review_scores_checkin        9.88571   2                10.0      10                       0  Union{Missing, Int64}    ⋯
+  22 │ review_scores_communication  9.85728   2                10.0      10                       0  Union{Missing, Int64}
+  23 │ review_scores_location       9.65183   2                10.0      10                       0  Union{Missing, Int64}
+  24 │ review_scores_value          9.45873   2                10.0      10                       0  Union{Missing, Int64}
+  25 │ price                        208.302   0.0              149.0     9000.0                   0  Union{Missing, Float64}  ⋯
+
+</code></pre>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/mbbatukan/mywebsite/edit/main/docs/projects/completed/data_wrangling_julia.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/projects/completed/data_wrangling_julia.md">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Mehmet Baris Batukan.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
