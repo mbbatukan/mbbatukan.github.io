@@ -18,8 +18,11 @@ I'm an inventor, a PhD student, and (most importantly) an emotionally artistic p
     :align: center
     :width: 750
 
+.. raw:: html
 
-Some of my hobbies include snowboarding...
+   <br>
+
+Some of my hobbies include snowboarding.
 
 .. image:: ./_static/me2.JPG
     :align: center
