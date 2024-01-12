@@ -1,4 +1,0 @@
-Sitemap: https://github.com/mbbatukan/mywebsite.git/sitemap.xml
-
-User-agent: *
-Disallow:
