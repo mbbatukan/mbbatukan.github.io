@@ -1,7 +1,9 @@
-# Patent 1
+# Patents
 
-Will be updated soon.
+This page contains information about my patents.
 
-<p align="center">
-  <i class="fas fa-circle-notch fa-spin fa-5x" style="font-size:250px;color:red;"></i> 
-</p>
+```{toctree}
+:maxdepth: 2
+
+patent1
+```
