@@ -13,13 +13,16 @@ html_theme.sidebar_secondary.remove: true
 > **Note: This website is currently under construction. Some pages and text will be published once it's ready. Thank you for your patience.**
 
 
-# About me 
-Will be updated soon.
+# About me
+I'm an inventor, a PhD student, and (most importantly) an emotionally artistic person. You won’t believe it, eh!
+
 
 <p align="center">
 <img src="./_static/me1.JPG" alt="Image 1" width="750"/>
 </p>
 <br>
+
+Some of my hobbies include snowboarding...
 
 <p align="center">
 <img src="./_static/me2.JPG" alt="Image 2" width="750"/>
