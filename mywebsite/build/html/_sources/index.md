@@ -10,16 +10,19 @@ html_theme.sidebar_secondary.remove: true
 
 # Welcome to My Personal Website!
 
-> **Note: This website is currently under construction. It will be published once it's ready. Thank you for your patience.**
+> **Note: This website is currently under construction. Some pages and text will be published once it's ready. Thank you for your patience.**
 
 
-# About me 
-Will be updated soon.
+## About me
+I'm an inventor, a PhD student, and (most importantly) an emotionally artistic person. You won’t believe it, eh!
+
 
 <p align="center">
 <img src="./_static/me1.JPG" alt="Image 1" width="750"/>
 </p>
 <br>
+
+Some of my hobbies include snowboarding...
 
 <p align="center">
 <img src="./_static/me2.JPG" alt="Image 2" width="750"/>
@@ -36,7 +39,7 @@ patent/_patent_index
 ```
 
 ## Projects
-Data science projects that I have worked on.
+Data science and engineering projects that I am currently working on or have worked on in the past.
 
 ```{toctree}
 :maxdepth: 2
@@ -45,7 +48,7 @@ project/_project_index
 ```
 
 ## Publications
-Research publications that I have contributed to.
+Research publications that I have contributed to, which are either under review or have been published.
 
 ```{toctree}
 :maxdepth: 2
