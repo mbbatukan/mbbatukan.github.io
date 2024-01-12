@@ -1,3 +1,5 @@
+# Projects
+
 You can view the projects I have worked on here.
  
 ```{toctree}
