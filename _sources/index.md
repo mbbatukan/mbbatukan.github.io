@@ -10,16 +10,23 @@ html_theme.sidebar_secondary.remove: true
 
 # Welcome to My Personal Website!
 
-## About me (Website is under construction!)
+> **Note: This website is currently under construction. It will be published once it's ready. Thank you for your patience.**
 
-<img src="/_static/me1.JPG" alt="Image 1" width="500"/>
+
+## About me (Website is under construction!)
+<p align="center">
+<img src="./_static/me1.JPG" alt="Image 1" width="750"/>
+</p>
 <br>
 
-<img src="/_static/me2.JPG" alt="Image 2" width="500"/>
+<p align="center">
+<img src="./_static/me1.JPG" alt="Image 2" width="750"/>
+</p>
 <br>
 
 ## Please fill out this form to contact me:
 
+<p align="center">
 <form action="https://formspree.io/f/myyrzebr" method="POST">
     <label for="name">Your Name:</label><br>
     <input type="text" id="name" name="name" required><br>
@@ -29,3 +36,4 @@ html_theme.sidebar_secondary.remove: true
     <textarea id="message" name="message" required></textarea><br>
     <input type="submit" value="Send">
 </form>
+</p>
