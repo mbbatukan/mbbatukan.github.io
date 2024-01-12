@@ -5,7 +5,7 @@
 Welcome to My Personal Website!
 ===============================
 
-.. note::
+.. warning::
 
     This website is currently under construction. Some pages and text will be published once it's ready. Thank you for your patience.
 
