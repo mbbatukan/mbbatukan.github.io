@@ -1,3 +1,5 @@
+# Publications
+
 You can find a list of my publications here.
 
 ```{toctree}

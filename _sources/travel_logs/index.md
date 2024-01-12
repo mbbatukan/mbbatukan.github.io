@@ -1,7 +1,7 @@
-# Vancouver, Canada (June 2023)
+# Travel Logs
 
-Will be updated soon.
+```{toctree}
+:maxdepth: 1
 
-<p align="center">
-  <i class="fas fa-circle-notch fa-spin fa-5x" style="font-size:250px;color:orange;"></i> 
-</p>
+vancouver
+```
