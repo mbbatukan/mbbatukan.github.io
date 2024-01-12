@@ -1,4 +1,9 @@
-.. _patent_index:
+---
+myst:
+  html_meta:
+    "description lang=en": |
+      My Personal Website - Mehmet Baris Batukan
+---
 
 # Patents
 

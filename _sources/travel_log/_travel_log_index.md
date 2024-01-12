@@ -1,4 +1,9 @@
-.. _travel_Log_index:
+---
+myst:
+  html_meta:
+    "description lang=en": |
+      My Personal Website - Mehmet Baris Batukan
+---
 
 # Travel Logs
 

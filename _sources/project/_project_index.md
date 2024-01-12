@@ -1,4 +1,9 @@
-.. _project_index:
+---
+myst:
+  html_meta:
+    "description lang=en": |
+      My Personal Website - Mehmet Baris Batukan
+---
 
 # Projects
 
