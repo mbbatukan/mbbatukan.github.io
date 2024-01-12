@@ -10,7 +10,7 @@ html_theme.sidebar_secondary.remove: true
 
 # Welcome to My Personal Website!
 
-> **Note: This website is currently under construction. It will be published once it's ready. Thank you for your patience.**
+> **Note: This website is currently under construction. Some pages and text will be published once it's ready. Thank you for your patience.**
 
 
 # About me 
@@ -36,7 +36,7 @@ patent/_patent_index
 ```
 
 ## Projects
-Data science projects that I have worked on.
+Data science and engineering projects that I am currently working on or have worked on in the past.
 
 ```{toctree}
 :maxdepth: 2
@@ -45,7 +45,7 @@ project/_project_index
 ```
 
 ## Publications
-Research publications that I have contributed to.
+Research publications that I have contributed to, which are either under review or have been published.
 
 ```{toctree}
 :maxdepth: 2
