@@ -36,7 +36,7 @@ extensions = [
 ]
 source_suffix = [".md", ".rst"]
 
-templates_path = ["_templates"]
+templates_path = ['_templates']
 exclude_patterns = []
 
 
@@ -116,7 +116,7 @@ html_context = {
     "doc_path": "docs",
 }
 
-html_favicon = "_static/favicon.png"
+html_favicon = "_static/favicon.ico"
 
 language = "en"
 
