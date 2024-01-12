@@ -13,7 +13,7 @@ html_theme.sidebar_secondary.remove: true
 > **Note: This website is currently under construction. It will be published once it's ready. Thank you for your patience.**
 
 
-## About me 
+# About me 
 Will be updated soon.
 
 <p align="center">
@@ -26,7 +26,7 @@ Will be updated soon.
 </p>
 <br>
 
-## Patents
+# Patents
 This page contains information about my patents.
 
 ```{toctree}
@@ -35,7 +35,7 @@ This page contains information about my patents.
 patents/index
 ```
 
-## Projects
+# Projects
 Data science projects that I have worked on.
 
 ```{toctree}
@@ -44,7 +44,7 @@ Data science projects that I have worked on.
 projects/index
 ```
 
-## Publications
+# Publications
 Research publications that I have contributed to.
 
 ```{toctree}
@@ -53,7 +53,7 @@ Research publications that I have contributed to.
 publications/index
 ```
 
-## Travel Logs
+# Travel Logs
 Travel logs from my trips.
 
 ```{toctree}
@@ -62,7 +62,7 @@ Travel logs from my trips.
 travel_logs/index
 ```
 
-## Please fill out this form to contact me:
+# Please fill out this form to contact me:
 
 <p style="text-align: center;">
 <form action="https://formspree.io/f/myyrzebr" method="POST" style="display: inline-block; width: 80%; min-width: 300px;">
