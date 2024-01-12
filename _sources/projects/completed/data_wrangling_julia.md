@@ -1,5 +1,7 @@
 # Data Wrangling with Julia
 
+## Introduction
+
 Data wrangling is a very important step in machine learning, and raw (scraped/downloaded from the internet) data should be cleaned out before training the models. Pandas is incredibly powerful and well-developed module in Python to analyze and manipulate the data, so I have gained some basic experience in the last few years. However, Julia, high-level programming language, has been increasingly getting popular in data science. While I try to learn syntax of Julia to add to my skill set, I prepared this post to show similarities in between Julia/DataFrames and Python/Pandas. I hope this will encourage people to see how easy to code in Julia.
 
 Recently, there was an online event to learn basics of machine learning (Luckily, I attended). In the first part, data wrangling was explained well in detail using Python/Pandas. Those who are interested in seeing the original repository by Shadi Khalifa and accessing to the source files can refer to [the repository](https://github.com/skhalifa/CAC_S20).
@@ -12,6 +14,8 @@ There will be no separate reference for each block of code, and well-written doc
 * [Julia/DataFrames](https://dataframes.juliadata.org/stable/)
 
 Since both modules and programming languages are getting updates frequently, some of codes may not properly run in the most recent version. Therefore, I listed the versions that I used to create outputs.
+
+## Versions
 
 * Python: 3.9.7
    * Pandas (conda): 1.3.5

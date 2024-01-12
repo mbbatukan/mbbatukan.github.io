@@ -60,6 +60,8 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exploratory Data Analysis of Los Angeles City Parcels" href="exploratory_data_analysis.html" />
+    <link rel="prev" title="Completed Projects" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Jan 12, 2024"/>
@@ -165,7 +167,7 @@
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         <no title>
                       </a>
@@ -283,9 +285,7 @@ document.write(`
       
       
       
-        
-      
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -305,7 +305,7 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         <no title>
                       </a>
@@ -378,6 +378,23 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ongoing/index.html">Ongoing Projects</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Completed Projects</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data Wrangling with Julia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exploratory_data_analysis.html">Exploratory Data Analysis of Los Angeles City Parcels</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -410,6 +427,12 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">&lt;no title&gt;</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Completed Projects</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Data...</li>
   </ul>
 </nav>
@@ -429,6 +452,8 @@ document.write(`
                   
   <section id="data-wrangling-with-julia">
 <h1>Data Wrangling with Julia<a class="headerlink" href="#data-wrangling-with-julia" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Data wrangling is a very important step in machine learning, and raw (scraped/downloaded from the internet) data should be cleaned out before training the models. Pandas is incredibly powerful and well-developed module in Python to analyze and manipulate the data, so I have gained some basic experience in the last few years. However, Julia, high-level programming language, has been increasingly getting popular in data science. While I try to learn syntax of Julia to add to my skill set, I prepared this post to show similarities in between Julia/DataFrames and Python/Pandas. I hope this will encourage people to see how easy to code in Julia.</p>
 <p>Recently, there was an online event to learn basics of machine learning (Luckily, I attended). In the first part, data wrangling was explained well in detail using Python/Pandas. Those who are interested in seeing the original repository by Shadi Khalifa and accessing to the source files can refer to <a class="reference external" href="https://github.com/skhalifa/CAC_S20">the repository</a>.</p>
 <p>Basically, I repeated what it was done in Python/Julia to gain confidence in Julia/DataFrames. This first block of code is the Python code and following codes are Julia code and output from Julia REPL, respectively. I didn’t explicitly show Python output, but it can be found in <a class="reference external" href="https://github.com/skhalifa/CAC_S20/blob/master/DataPrepHandsOn.ipynb">Jupyter Notebook</a>.</p>
@@ -438,6 +463,9 @@ document.write(`
 <li><p><a class="reference external" href="https://dataframes.juliadata.org/stable/">Julia/DataFrames</a></p></li>
 </ul>
 <p>Since both modules and programming languages are getting updates frequently, some of codes may not properly run in the most recent version. Therefore, I listed the versions that I used to create outputs.</p>
+</section>
+<section id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Python: 3.9.7</p>
 <ul>
@@ -677,6 +705,7 @@ max	1475.000000	94965.000000	37.810306	-122.370428	16.000000	8.00000	7.000000	14
 
 </code></pre>
 </section>
+</section>
 
 
                 </article>
@@ -691,6 +720,19 @@ max	1475.000000	94965.000000	37.810306	-122.370428	16.000000	8.00000	7.000000	14
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
