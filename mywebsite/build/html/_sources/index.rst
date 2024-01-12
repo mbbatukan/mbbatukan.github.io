@@ -31,7 +31,7 @@ Some of my hobbies include snowboarding.
 Patents
 -------
 
-This page contains information about my patents.
+This section contains information about my patents.
 
 .. toctree::
     :maxdepth: 2
