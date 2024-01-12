@@ -7,7 +7,7 @@ Contact Form
 
 .. note::
 
-    Please fill out this form to contact me:
+    Please fill out this form to contact me. I will get back to you as soon as possible.
 
 .. raw:: html
 
