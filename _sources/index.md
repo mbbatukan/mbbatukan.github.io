@@ -26,43 +26,43 @@ Will be updated soon.
 </p>
 <br>
 
-<!-- # Patents -->
+## Patents
 This page contains information about my patents.
 
 ```{toctree}
 :maxdepth: 2
 
-patents/index
+patent/_patent_index
 ```
 
-<!-- # Projects -->
+## Projects
 Data science projects that I have worked on.
 
 ```{toctree}
 :maxdepth: 2
 
-projects/index
+project/_project_index
 ```
 
-<!-- # Publications -->
+## Publications
 Research publications that I have contributed to.
 
 ```{toctree}
 :maxdepth: 2
 
-publications/index
+publication/_publication_index
 ```
 
-<!-- # Travel Logs -->
+## Travel Logs
 Travel logs from my trips.
 
 ```{toctree}
 :maxdepth: 2
 
-travel_logs/index
+travel_log/_travel_log_index
 ```
 
-# Please fill out this form to contact me:
+## Please fill out this form to contact me:
 
 <p style="text-align: center;">
 <form action="https://formspree.io/f/myyrzebr" method="POST" style="display: inline-block; width: 80%; min-width: 300px;">
