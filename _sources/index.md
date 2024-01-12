@@ -13,27 +13,29 @@ html_theme.sidebar_secondary.remove: true
 > **Note: This website is currently under construction. It will be published once it's ready. Thank you for your patience.**
 
 
-## About me (Website is under construction!)
+## About me 
+Will be updated soon.
+
 <p align="center">
 <img src="./_static/me1.JPG" alt="Image 1" width="750"/>
 </p>
 <br>
 
 <p align="center">
-<img src="./_static/me1.JPG" alt="Image 2" width="750"/>
+<img src="./_static/me2.JPG" alt="Image 2" width="750"/>
 </p>
 <br>
 
 ## Please fill out this form to contact me:
 
-<p align="center">
-<form action="https://formspree.io/f/myyrzebr" method="POST">
+<p style="text-align: center;">
+<form action="https://formspree.io/f/myyrzebr" method="POST" style="display: inline-block; width: 80%; min-width: 300px;">
     <label for="name">Your Name:</label><br>
-    <input type="text" id="name" name="name" required><br>
+    <input type="text" id="name" name="name" required style="width: 100%;"><br>
     <label for="email">Your Email:</label><br>
-    <input type="email" id="email" name="_replyto" required><br>
+    <input type="email" id="email" name="_replyto" required style="width: 100%;"><br>
     <label for="message">Your Message:</label><br>
-    <textarea id="message" name="message" required></textarea><br>
+    <textarea id="message" name="message" required style="width: 100%;"></textarea><br>
     <input type="submit" value="Send">
 </form>
 </p>
