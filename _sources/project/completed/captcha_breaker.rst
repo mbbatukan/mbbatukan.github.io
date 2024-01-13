@@ -12,6 +12,8 @@ For our project, we decided to focus on text-based CAPTCHAs (randomly spaced let
 
 .. figure:: ./images/img1.png
     :alt: Figure 1: An example of CAPTCHA in the selected dataset
+    :align: center
+    :width: 50%
 
     Figure 1: An example of CAPTCHA in the selected dataset
 
