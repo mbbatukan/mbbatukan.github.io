@@ -10,7 +10,10 @@ Reverse Turing tests, or CAPTCHAs, are problems that are difficult for computers
 
 For our project, we decided to focus on text-based CAPTCHAs (randomly spaced letters or digits with some background noise) because they are ubiquitous on the web. They are commonly used because they are easy to create and deploy (Alqahtani & Alsulaiman, 2020). Various character distortions, such as different sizing, angles, fonts and warpings, are used to increase the complexity of the task. For our dataset, we are using coloured 5-digit CAPTCHAs from a publicly available CAPTCHA generator. An example of a CAPTCHA produced by the the generator is shown in Figure 1.
 
-![Figure 1: An example of CAPTCHA in the selected dataset](./images/fig1.png)
+.. figure:: ./images/img1.png
+    :alt: Figure 1: An example of CAPTCHA in the selected dataset
+
+    Figure 1: An example of CAPTCHA in the selected dataset
 
 .. note::
     The rest of the report will be added soon.
