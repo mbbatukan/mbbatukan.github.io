@@ -1,4 +1,4 @@
-CRACKING CAPTCHAS USING DEEP LEARNING
+Cracking CAPTCHAs Using Deep learning
 =====================================
 
 Introduction
