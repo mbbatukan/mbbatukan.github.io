@@ -6,4 +6,4 @@ ModularBuildingPy
 .. note::
 
     The module is currently under development. The source code and documentation will be published in mid- or late 2024. 
-    For more information, please reach out to me using the links on the :doc:`contact page </contact/index>`.
+    For more information, please reach out to me using the form on the :doc:`contact page </contact/index>`.
