@@ -2,18 +2,18 @@
 
 ## Introduction
 
-Data wrangling is a very important step in machine learning, and raw (scraped/downloaded from the internet) data should be cleaned out before training the models. Pandas is incredibly powerful and well-developed module in Python to analyze and manipulate the data, so I have gained some basic experience in the last few years. However, Julia, high-level programming language, has been increasingly getting popular in data science. While I try to learn syntax of Julia to add to my skill set, I prepared this post to show similarities in between Julia/DataFrames and Python/Pandas. I hope this will encourage people to see how easy to code in Julia.
+Data wrangling is a very important step in machine learning, and raw (scraped/downloaded from the internet) data should be cleaned out before training the models. Pandas is incredibly powerful and well-developed module in Python to analyze and manipulate the data, so I have gained some basic experience in the last few years. However, Julia, high-level programming language, has been increasingly getting popular in data science. While I try to learn syntax of Julia to add to my skill set, I prepared this post to show similarities in between Julia/DataFrames and Python/Pandas. I hope this will encourage people to see how easy it is to code in Julia.
 
-Recently, there was an online event to learn basics of machine learning (Luckily, I attended). In the first part, data wrangling was explained well in detail using Python/Pandas. Those who are interested in seeing the original repository by Shadi Khalifa and accessing to the source files can refer to [the repository](https://github.com/skhalifa/CAC_S20).
+Recently, there was an online event to learn the basics of machine learning (luckily, I attended). In the first part, data wrangling was explained well in detail using Python/Pandas. Those who are interested in seeing the original repository by Shadi Khalifa and accessing the source files can refer to [the repository](https://github.com/skhalifa/CAC_S20).
 
-Basically, I repeated what it was done in Python/Julia to gain confidence in Julia/DataFrames. This first block of code is the Python code and following codes are Julia code and output from Julia REPL, respectively. I didn't explicitly show Python output, but it can be found in [Jupyter Notebook](https://github.com/skhalifa/CAC_S20/blob/master/DataPrepHandsOn.ipynb).
+Basically, I repeated what was done in Python/Julia to gain confidence in Julia/DataFrames. This first block of code is the Python code, and the following codes are Julia code and output from Julia REPL, respectively. I didn't explicitly show Python output, but it can be found in [Jupyter Notebook](https://github.com/skhalifa/CAC_S20/blob/master/DataPrepHandsOn.ipynb).
 
-There will be no separate reference for each block of code, and well-written documentation of the both modules can be accessed using the links below.
+There will be no separate reference for each block of code, and well-written documentation of both modules can be accessed using the links below.
 
 * [Python/Pandas](https://pandas.pydata.org/docs/)
 * [Julia/DataFrames](https://dataframes.juliadata.org/stable/)
 
-Since both modules and programming languages are getting updates frequently, some of codes may not properly run in the most recent version. Therefore, I listed the versions that I used to create outputs.
+Since both modules and programming languages are getting updates frequently, some of the codes may not properly run in the most recent version. Therefore, I listed the versions that I used to create outputs.
 
 ## Versions
 
@@ -25,9 +25,9 @@ Since both modules and programming languages are getting updates frequently, som
    * DataFrames: 1.3.1
    * DataFramesMeta: 0.10.0
 
-If you are new to Julia, you can refer to [Julia documentation](https://docs.julialang.org/en/v1/) and watch [julia for talented ameteurs](https://www.youtube.com/c/juliafortalentedamateurs) channel in YouTube to gain basic knowledge.
+If you are new to Julia, you can refer to the [Julia documentation](https://docs.julialang.org/en/v1/) and watch [julia for talented ameteurs](https://www.youtube.com/c/juliafortalentedamateurs) channel on YouTube to gain basic knowledge.
 
-First of all, we need to import modules and CSV (data) file.
+First of all, we need to import modules and a CSV (data) file.
 
 ```python
 # Python
@@ -43,7 +43,7 @@ using CSV, DataFrames
 df_airbnb = DataFrame(CSV.File("airbnb.csv"))
 ```
 
-The first/last 5 rows of the dataframe can be printed with following commands:
+The first or last five rows of the dataframe can be printed with the following commands:
 * Python: `df_airbnb.head(5)` and `df_airbnb.tail(5)`
 * Julia: `first(df_airbnb, 5)` and `last(df_airbnb, 5)`
 
@@ -59,14 +59,14 @@ df_airbnb.shape
 # Julia
 @show size(df_airbnb)
 ```
-~~~
+
 <pre><code class="plaintext code-output"># Julia REPL output
 size(df_airbnb) = (7072, 96)</code></pre>
-~~~
 
-Also, `df_airbnb.info()` method and `describe(df_airbnb)` function can be used to get detailed information about dataset in Python/Pandas and Julia/DataFrames, respectively.
 
-There are 96 columns and 7072 rows as you can see from the output. Since not all of these columns is necessary to train model, we select some of the columns from the main dataframe.
+Also, `df_airbnb.info()` method and `describe(df_airbnb)` function can be used to get detailed information about datasets in Python/Pandas and Julia/DataFrames, respectively.
+
+There are 96 columns and 7072 rows, as you can see from the output. Since not all of these columns are necessary to train the model, we selected some of the columns from the main dataframe.
 
 ```julia
 # The same array in Python and Julia
@@ -112,7 +112,7 @@ To see what type of elements we have in each column, you can use:
 * Python: `df_cleaned.dtypes`
 * Julia: `[names(df_cleaned) eltype.(eachcol(df_cleaned))]`
 
-~~~
+
 <pre><code class="plaintext code-output"># Julia REPL output
 25×2 Matrix{Any}:
  "host_is_superhost"            Union{Missing, String1}
@@ -141,7 +141,7 @@ To see what type of elements we have in each column, you can use:
  "review_scores_value"          Union{Missing, Int64}
  "price"                        Union{Missing, String15}
 </code></pre>
-~~~
+
 
 As can be seen above, Julia gives you Union type which consists of Missing and other data types (`Int`, `String`, and `Float`) meaning that we have missing data in each column. Also, missing data (`NaN`) can easily be observed with `df_cleaned.info()` method in Python as well.
 
@@ -157,7 +157,7 @@ df_cleaned.price = passmissing(parse).(Float64, df_cleaned.price)
 ```python
 df_cleaned[["host_is_superhost", "host_total_listings_count", "zipcode"]].describe() 
 ```
-~~~
+
 <pre><code class="plaintext code-output"># Python output
 host_total_listings_count	zipcode
 count	5165.000000	5101.000000
@@ -169,12 +169,12 @@ min	0.000000	94014.000000
 75%	5.000000	94118.000000
 max	1475.000000	94965.000000
 </code></pre>
-~~~
+
 
 ```julia
 describe(df_cleaned[!, ["host_is_superhost", "host_total_listings_count", "zipcode"]])
 ```
-~~~
+
 <pre><code class="plaintext code-output"># Julia REPL output
 3×7 DataFrame
  Row │ variable                   mean     min    median   max    nmissing  eltype                  
@@ -184,7 +184,7 @@ describe(df_cleaned[!, ["host_is_superhost", "host_total_listings_count", "zipco
    2 │ host_total_listings_count  42.0445  0      2.0      1475       1907  Union{Missing, Int64}
    3 │ zipcode                    94115.0  94014  94114.0  94965      1971  Union{Missing, Int64}
 </code></pre>
-~~~
+
 
 ```python
 df_cleaned_NaN_zip = df_cleaned.dropna(subset=["zipcode"])

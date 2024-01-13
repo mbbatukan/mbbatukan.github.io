@@ -7,7 +7,7 @@ Welcome to My Personal Website!
 
 .. warning::
 
-    This website is currently under construction. Some pages and text will be published once it's ready. Thank you for your patience.
+    This website is currently under construction. Some pages and text will be published once they're ready. Thank you for your patience.
 
 About me
 --------
@@ -22,7 +22,7 @@ I'm an inventor, a PhD student, and (most importantly) an emotionally artistic p
 
    <br>
 
-Some of my hobbies include snowboarding.
+Snowboarding is one of my interests.
 
 .. image:: ./_static/me2.JPG
     :align: center
@@ -31,7 +31,7 @@ Some of my hobbies include snowboarding.
 Patents
 -------
 
-This section contains information about my patents.
+This section offers details on my patents.
 
 .. toctree::
     :maxdepth: 2
@@ -41,7 +41,7 @@ This section contains information about my patents.
 Projects
 --------
 
-Data science and engineering projects that I am currently working on or have worked on in the past.
+Projects involving data science and engineering that I have worked on in the past or am presently working on.
 
 .. toctree::
     :maxdepth: 2
@@ -51,7 +51,7 @@ Data science and engineering projects that I am currently working on or have wor
 Publications
 ------------
 
-Research publications that I have contributed to, which are either under review or have been published.
+I have contributed to research publications that are either published or undergoing review.
 
 .. toctree::
     :maxdepth: 2
@@ -61,7 +61,7 @@ Research publications that I have contributed to, which are either under review 
 Travel Logs
 -----------
 
-Travel logs from my trips.
+Travel logs from my journeys.
 
 .. toctree::
     :maxdepth: 2
