@@ -20,6 +20,7 @@ release = "None"
 extensions = [
     "myst_parser",
     "sphinx_copybutton",
+    "sphinx_favicon",
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
@@ -41,11 +42,10 @@ exclude_patterns = []
 
 
 def setup(app):
-    app.add_css_file("_static/custom.css")
-
+    app.add_css_file("custom.css")
 
 html_static_path = ["_static"]
-html_css_files = ["_static/custom.css"]
+html_css_files = ["custom.css"]
 html_extra_path = ["_static/google433b1eb8ef1cebce.html"]
 html_extra_path = []
 html_context = {
@@ -54,6 +54,7 @@ html_context = {
 
 html_theme = "pydata_sphinx_theme"
 html_logo = "_static/person-snowboarding.svg"
+html_title = "Mehmet Baris Batukan"
 html_theme_options = {
     "logo": {
         "text": "Mehmet Baris Batukan",
@@ -107,8 +108,39 @@ html_theme_options = {
         # "examples/no-sidebar": [],
     },
     "analytics": {
-        "google_analytics_id": "G-HRLM8WKPT0",
+        "google_analytics_id": "G-5JG0FRE1WP",
     },
+    "favicons": [
+        {
+            "rel": "apple-touch-icon",
+            "sizes": "180x180",
+            "href": "apple-touch-icon.png",
+        },
+        {
+            "rel": "icon",
+            "type": "image/png",
+            "sizes": "32x32",
+            "href": "favicon-32x32.png",
+        },
+        {
+            "rel": "icon",
+            "type": "image/png",
+            "sizes": "16x16",
+            "href": "favicon-16x16.png",
+        },
+        # {
+        #     "rel": "manifest",
+        #     "href": "_static/site.webmanifest",
+        # },
+        # {
+        #     "name": "msapplication-TileColor",
+        #     "content": "#da532c",
+        # },
+        # {
+        #     "name": "theme-color",
+        #     "content": "#ffffff",
+        # },
+    ]
 }
 
 html_context = {
@@ -118,7 +150,7 @@ html_context = {
     "doc_path": "docs",
 }
 
-html_favicon = "_static/favicon.ico"
+# html_favicon = "_static/favicon.ico"
 
 language = "en"
 

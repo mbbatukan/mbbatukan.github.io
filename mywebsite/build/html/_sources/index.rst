@@ -1,5 +1,5 @@
 .. meta::
-    :description: Documentation for ModularBuildingPy.
+    :description: My Personal Website.
     :google-site-verification: A1RURIpC8Z5ymh1wV92CSBWnz_EJQScc_uAkRdHePwc
 
 Welcome to My Personal Website!
