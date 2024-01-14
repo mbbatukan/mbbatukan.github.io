@@ -47,7 +47,6 @@ def setup(app):
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_extra_path = ["_static/google433b1eb8ef1cebce.html"]
-html_extra_path = []
 html_context = {
     "default_mode": "dark",
 }
@@ -128,18 +127,6 @@ html_theme_options = {
             "sizes": "16x16",
             "href": "favicon-16x16.png",
         },
-        # {
-        #     "rel": "manifest",
-        #     "href": "_static/site.webmanifest",
-        # },
-        # {
-        #     "name": "msapplication-TileColor",
-        #     "content": "#da532c",
-        # },
-        # {
-        #     "name": "theme-color",
-        #     "content": "#ffffff",
-        # },
     ]
 }
 
