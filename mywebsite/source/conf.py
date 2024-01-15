@@ -37,12 +37,13 @@ extensions = [
 ]
 source_suffix = [".md", ".rst"]
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
 
 
 def setup(app):
     app.add_css_file("custom.css")
+
 
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
@@ -109,25 +110,25 @@ html_theme_options = {
     "analytics": {
         "google_analytics_id": "G-5JG0FRE1WP",
     },
-    "favicons": [
-        {
-            "rel": "apple-touch-icon",
-            "sizes": "180x180",
-            "href": "apple-touch-icon.png",
-        },
-        {
-            "rel": "icon",
-            "type": "image/png",
-            "sizes": "32x32",
-            "href": "favicon-32x32.png",
-        },
-        {
-            "rel": "icon",
-            "type": "image/png",
-            "sizes": "16x16",
-            "href": "favicon-16x16.png",
-        },
-    ]
+    # "favicons": [
+    #     {
+    #         "rel": "apple-touch-icon",
+    #         "sizes": "180x180",
+    #         "href": "apple-touch-icon.png",
+    #     },
+    #     {
+    #         "rel": "icon",
+    #         "type": "image/png",
+    #         "sizes": "32x32",
+    #         "href": "favicon-32x32.png",
+    #     },
+    #     {
+    #         "rel": "icon",
+    #         "type": "image/png",
+    #         "sizes": "16x16",
+    #         "href": "favicon-16x16.png",
+    #     },
+    # ]
 }
 
 html_context = {
@@ -137,9 +138,19 @@ html_context = {
     "doc_path": "docs",
 }
 
-# html_favicon = "_static/favicon.ico"
+favicons = [
+    {"rel": "icon", "href": "favicon.ico", "type": "image/ico"},
+    {"rel": "icon", "sizes": "16x16", "href": "favicon-16x16.png", "type": "image/png"},
+    {"rel": "icon", "sizes": "32x32", "href": "favicon-32x32.png", "type": "image/png"},
+    {
+        "rel": "apple-touch-icon",
+        "sizes": "180x180",
+        "href": "apple-touch-icon-180x180.png",
+        "type": "image/png",
+    },
+]
 
 language = "en"
-
-html_sourcelink_suffix = ""
+html_show_sourcelink = False
+html_add_permalinks = ""
 html_last_updated_fmt = ""  # to reveal the build date in the pages meta
